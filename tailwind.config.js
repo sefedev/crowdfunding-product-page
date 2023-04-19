@@ -14,7 +14,7 @@ export default {
       md: { max: "678px" },
     },
     backgroundImage: {
-      "hero-desktop": "url('./assets/image-hero-desktop.jpg')",
+      "hero-desktop": "url('/assets/image-hero-desktop.jpg')",
     },
     extend: {},
   },
