@@ -10,7 +10,7 @@ const Navbar = ({isMobile, navigator, menuOpen, setMenuOpen}) => {
 
   return (
     <div className="flex items-center justify-between w-full text-White">
-      <h1>Crowdfunding</h1>
+      <h1 className="text-2xl font-bold">Crowdfund</h1>
       {isMobile ? (
         <button onClick={handleMenu} className="z-50">
         {menuOpen ? <IconMenuClose /> : <IconHamburger />}

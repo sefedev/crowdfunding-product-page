@@ -24,7 +24,7 @@ const CardType = ({ type, price, about, daysLeft }) => {
           <p className="text-sm text-DarkGray">left</p>
         </span>
         <Button
-          className={`bg-ModerateCyan ${
+          className={`bg-ModerateCyan font-semibold ${
             daysLeft === 0 ? "cursor-not-allowed" : null
           }`}
           disabled

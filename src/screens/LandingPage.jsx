@@ -35,7 +35,7 @@ const LandingPage = () => {
         <Navbar isMobile={isMobile} navigator={NAVIGATOR} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </nav>
       <main className="relative z-30 flex flex-col items-center top-44 sm:px-4">
-        <SectionCardOne />
+        <SectionCardOne isMobile={isMobile} />
         <SectionCardTwo isMobile={isMobile} />
         <SectionCardThree />
       </main>
