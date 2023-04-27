@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "./Button";
 
-const CardType = ({ type, price, about, daysLeft }) => {
-    const click = () => {
-        return alert(type)
-    }
+const CardType = ({ type, price, about, daysLeft, setOpenModal }) => {
+
+  const selectReward = () => {
+    setOpenModal(true)
+  }
+  
   return (
     <section
       className={`w-full p-6 mb-6 border-2 rounded-lg shadow-sm border-DarkGray border-opacity-40 ${
@@ -13,7 +15,9 @@ const CardType = ({ type, price, about, daysLeft }) => {
     >
       <div className="flex justify-between sm:flex-col">
         <h4 className="font-semibold sm:mb-2">{type}</h4>
-        <a href="#" className="text-ModerateCyan">
+        <a href="#" className={`text-ModerateCyan ${
+            daysLeft === 0 ? "cursor-not-allowed" : null
+          }`} disabled>
           Pledge ${price} or more
         </a>
       </div>
@@ -24,11 +28,11 @@ const CardType = ({ type, price, about, daysLeft }) => {
           <p className="text-sm text-DarkGray">left</p>
         </span>
         <Button
+          onClick={selectReward}
           className={`bg-ModerateCyan font-semibold ${
             daysLeft === 0 ? "cursor-not-allowed" : null
           }`}
-          disabled
-          onClick={click}
+          disabled={true}
         >
           {
             daysLeft === 0 ? "Out of Stock" : "Select Reward"

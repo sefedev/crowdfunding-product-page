@@ -2,30 +2,7 @@ import React from "react";
 import CardType from "./CardType";
 import SectionCard from "./SectionCard";
 
-const SectionCardThree = () => {
-  const CARD_TYPE = [
-    {
-      type: "Bamboo Stand",
-      price: 25,
-      about:
-        "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you'll be added to a special Backer memeber list",
-      daysLeft: 101,
-    },
-    {
-      type: "Black Edition Stand",
-      price: 75,
-      about:
-        "You get a Black Special Edition computer stand and a personal thank you, You'll be added to our Backer member list. Shipping is included",
-      daysLeft: 64,
-    },
-    {
-      type: "Mahogany Special Edition",
-      price: 200,
-      about:
-        "You get two Special Edition Mahogany stands, a backer T-shirt, and a personal thank you, You'll be added to our Backer member list. Shipping is included",
-      daysLeft: 0,
-    },
-  ];
+const SectionCardThree = ({CARD_TYPE, setOpenModal}) => {
   return (
     <SectionCard>
       <h3 className="flex justify-start w-full mb-6 text-lg font-semibold">
@@ -53,6 +30,7 @@ const SectionCardThree = () => {
             price={price}
             about={about}
             daysLeft={daysLeft}
+            setOpenModal={setOpenModal}
           />
         );
       })}

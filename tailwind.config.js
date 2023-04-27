@@ -8,6 +8,7 @@ export default {
       ModerateCyan: "hsl(176, 50%, 47%)",
       DarkCyan: "hsl(176, 72%, 28%)",
       DarkGray: "hsl(0, 0%, 48%)",
+      Red: "#ef4444"
     },
     screens: {
       sm: { max: "480px" },
@@ -18,5 +19,7 @@ export default {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+     //require('@tailwindcss/forms'),
+  ],
 };

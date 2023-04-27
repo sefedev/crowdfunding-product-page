@@ -3,12 +3,17 @@ import { IconBookMark, LogoMasterCraft } from "../utils";
 import Button from "./Button";
 import SectionCard from "./SectionCard";
 
-const SectionCardOne = ({ isMobile }) => {
+const SectionCardOne = ({ isMobile, setOpenModal }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleBookmarked = () => {
     setIsBookmarked(() => !isBookmarked);
   };
+
+  const handleOpenModal = () => {
+    setOpenModal(true)
+  }
+
   return (
     <SectionCard>
       <span className="absolute -top-8">
@@ -21,7 +26,9 @@ const SectionCardOne = ({ isMobile }) => {
         A beautiful & handcrafted monitor stands to reduce neck and eye strain
       </p>
       <div className="flex justify-between w-full my-8 h-fit">
-        <Button className="bg-ModerateCyan sm:w-full">
+        <Button 
+        onClick={handleOpenModal}
+        className="bg-ModerateCyan sm:w-full">
           <strong>Back this project</strong>
         </Button>
         {isMobile ? (
@@ -34,12 +41,12 @@ const SectionCardOne = ({ isMobile }) => {
               />
           </button>
         ) : (
-          <Button
+          <button
             onClick={handleBookmarked}
-            className={`w-2/5 pl-12  bg-opacity-20 hover:bg-Black hover:text-White ${
+            className={`relative rounded-3xl w-2/5 pl-8 hover:bg-Black hover:text-White bg-opacity-20 font-semibold transition duration-150 ${
               isBookmarked
-                ? " text-DarkCyan bg-DarkCyan"
-                : "text-Black bg-DarkGray text-opacity-50"
+                ? "text-DarkCyan bg-DarkCyan "
+                : "text-Black text-opacity-70 bg-DarkGray"
             }`}
           >
             <span className="absolute left-0 -top-1">
@@ -48,10 +55,10 @@ const SectionCardOne = ({ isMobile }) => {
                 pathFill={isBookmarked ? "#FFF" : "#B1B1B1"}
               />
             </span>
-            <strong className="relative">
+            <span className="relative">
               {isBookmarked ? "Bookmarked" : "Bookmark"}
-            </strong>
-          </Button>
+            </span>
+          </button>
         )}
       </div>
     </SectionCard>
